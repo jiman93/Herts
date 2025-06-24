@@ -1,14 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    println("Welcome to the Kotlin CLI Utility!")
+    println("Available commands: sum, conversion, factorial, exit")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    while (true) {
+        print("Enter command: ")
+        val command = readLine()?.trim()?.lowercase()
+
+        when (command) {
+            "sum" -> handleSum()
+            "conversion" -> {
+                println("Conversion function not implemented yet. Please check with your team.")
+            }
+            "factorial" -> {
+                println("Factorial function not implemented yet. Please check with your team.")
+            }
+            "exit" -> {
+                println("Goodbye!")
+                break
+            }
+            else -> println("Invalid command. Please try again.")
+        }
     }
+}
+
+// sum: 1^3 + 2^3 + ... + n^3
+fun handleSum() {
+    print("Enter a natural number: ")
+    val input = readLine()
+    val n = input?.toIntOrNull()
+    if (n == null || n <= 0) {
+        println("Invalid input. Please enter a natural number.")
+        return
+    }
+
+    val result = (1..n).sumOf { it * it * it }
+    println("Sum of cubes up to $n is: $result")
 }
