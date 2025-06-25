@@ -19,15 +19,16 @@ fun factorial(x: Int): Int {
 
 /**
  * Computes the sum of the factorials of x, y & z
- * E.g.     valid   factorial(0, 0, 0)
- *                  factorial(1, 2, 3)
- *          invalid factorial(-1, 0, 0)
- *                  factorial(13, 2, 3)
+ * E.g.     valid   sumFactorial(0, 0, 0) = 1
+ *                  sumFactorial(1, 2, 3) = 9
+ *                  sumFactorial(12, 12, 12) = 1437004800
+ *          invalid sumFactorial(-1, 0, 0) = ??
+ *                  sumFactorial(13, 2, 3) = ??
  * @param   x greater than or equal to 0
  * @param   y greater than or equal to 0
  * @param   z greater than or equal to 0
  * @returns The sum of the factorials of x, y, z. Or -1 if the illegal arguments
- *          are supplied, or -2 if the result overflows
+ *          are supplied, or -2 if factorial of an argument overflows
  */
 fun sumFactorial(x: Int, y: Int, z: Int): Int {
     if (x < 0 || y < 0 || z < 0) return -1
@@ -70,9 +71,9 @@ fun handleFactorial(): Unit {
     sum = sumFactorial(arr[0], arr[1], arr[2])
 
     when (sum) {
-        -1 -> println("\nError: The numbers supplied to the operation were not positive integers, this operation will terminate.")
-        -2 -> println("\nError: The numbers supplied were too large to be calculated, this operation will terminate.")
-        else -> println("\nThe sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum")
+        -1 -> println("Error: The numbers supplied to the operation were not positive integers, this operation will terminate.")
+        -2 -> println("Error: The numbers supplied were too large to be calculated, this operation will terminate.")
+        else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum")
     }
 
     return Unit
