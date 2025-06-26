@@ -11,9 +11,7 @@ fun main() {
             "conversion" -> {
                 println("Conversion function not implemented yet. Please check with your team.")
             }
-            "factorial" -> {
-                println("Factorial function not implemented yet. Please check with your team.")
-            }
+            "factorial" -> handleFactorial()
             "exit" -> {
                 println("Goodbye!")
                 break
