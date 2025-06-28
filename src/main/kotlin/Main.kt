@@ -8,9 +8,7 @@ fun main() {
 
         when (command) {
             "sum" -> handleSum()
-            "conversion" -> {
-                println("Conversion function not implemented yet. Please check with your team.")
-            }
+            "conversion" -> handleConversion()
             "factorial" -> handleFactorial()
             "exit" -> {
                 println("Goodbye!")
