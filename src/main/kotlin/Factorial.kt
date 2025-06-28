@@ -57,7 +57,7 @@ fun handleFactorial(): Unit {
         println("Please supply ${if (i == 0) "a" else "another"} number:")
         val x: String = readln()
 
-        if (x.length == 0) {
+        if (x.isEmpty()) {
             println("Error: Number was empty, this operation will terminate.")
             escape = -1
             break
@@ -70,11 +70,9 @@ fun handleFactorial(): Unit {
 
     sum = sumFactorial(arr[0], arr[1], arr[2])
 
-    when (sum) {
+    return when (sum) {
         -1 -> println("Error: The numbers supplied to the operation were not positive integers, this operation will terminate.")
         -2 -> println("Error: The numbers supplied were too large to be calculated, this operation will terminate.")
         else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum")
     }
-
-    return Unit
 }
