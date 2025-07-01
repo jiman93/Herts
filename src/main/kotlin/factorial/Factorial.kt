@@ -1,3 +1,5 @@
+package factorial
+
 /**
  * Computes the factorial of x
  * E.g.     valid   factorial(0) = 1
@@ -57,7 +59,7 @@ fun handleFactorial(): Unit {
         println("Please supply ${if (i == 0) "a" else "another"} number:")
         val x: String = readln()
 
-        if (x.isEmpty()) {
+        if (x.isEmpty() || x == null) {
             println("Error: Number was empty, this operation will terminate.")
             escape = -1
             break
@@ -76,3 +78,5 @@ fun handleFactorial(): Unit {
         else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum")
     }
 }
+
+fun main(): Unit = handleFactorial()
