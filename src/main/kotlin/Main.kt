@@ -1,3 +1,6 @@
+import conversion.handleConversion
+import factorial.handleFactorial
+
 fun main() {
     println("Welcome to the Kotlin CLI Utility!")
     println("Available commands: sum, conversion, factorial, exit")

@@ -1,3 +1,5 @@
+package factorial
+
 /**
  * Computes the factorial of x
  * E.g.     valid   factorial(0) = 1
@@ -76,3 +78,5 @@ fun handleFactorial(): Unit {
         else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum")
     }
 }
+
+fun main(): Unit = handleFactorial()

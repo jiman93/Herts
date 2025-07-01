@@ -1,3 +1,5 @@
+package conversion
+
 /**
  * Converts a temperature from celsius to kelvin
  * E.g.     valid   celsiusToKelvin(0.0) = 273.15
@@ -191,3 +193,5 @@ fun handleConversion(): Unit {
 
     return println("$tempNumber ${returnTempUnit(from)} is $conversion ${returnTempUnit(to)}")
 }
+
+fun main(): Unit = handleConversion()
