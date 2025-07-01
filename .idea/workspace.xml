@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d5605308-2af7-44ba-8b79-1ac70db32101" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Conversion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Factorial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ConversionTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/conversion/ConversionTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/FactorialTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/factorial/FactorialTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +115,70 @@
       <recent name="" />
     </key>
   </component>
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="ConversionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;conversion.ConversionTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FactorialTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;factorial.FactorialTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="Herts.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.FactorialTest" />
+        <item itemvalue="Gradle.ConversionTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -139,7 +200,7 @@
       <workItem from="1750957399209" duration="2501000" />
       <workItem from="1751042440658" duration="505000" />
       <workItem from="1751103102270" duration="6700000" />
-      <workItem from="1751384019169" duration="991000" />
+      <workItem from="1751384019169" duration="2941000" />
     </task>
     <servers />
   </component>

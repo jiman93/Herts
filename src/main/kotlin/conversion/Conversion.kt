@@ -157,7 +157,7 @@ fun handleConversion(): Unit {
 
     val from: String = readln()
 
-    if (from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
+    if (from == null || from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
         return println("Error: Input was invalid, this operation will terminate.")
     }
 
@@ -165,7 +165,7 @@ fun handleConversion(): Unit {
 
     val to: String = readln()
 
-    if (to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
+    if (to == null || to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
         return println("Error: Input was invalid, this operation will terminate.")
     } else if (from == to) {
         return println("Error: The units supplied were the same, this operation will terminate.")
@@ -175,7 +175,7 @@ fun handleConversion(): Unit {
 
     val temp: String = readln()
 
-    if (temp.isEmpty()) {
+    if (temp == null || temp.isEmpty()) {
         return println("Error: Input was empty, this operation will terminate.")
     }
 

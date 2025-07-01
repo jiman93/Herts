@@ -59,7 +59,7 @@ fun handleFactorial(): Unit {
         println("Please supply ${if (i == 0) "a" else "another"} number:")
         val x: String = readln()
 
-        if (x.isEmpty()) {
+        if (x.isEmpty() || x == null) {
             println("Error: Number was empty, this operation will terminate.")
             escape = -1
             break
