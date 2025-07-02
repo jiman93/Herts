@@ -46,7 +46,7 @@ fun sumFactorial(x: Int, y: Int, z: Int): Int {
 
 /**
  * Handles interaction with the user for the factorial operation
- * @returns Unit & multiple side effects of println and readln
+ * @returns Unit & multiple side effects of println and readline
  */
 fun handleFactorial(): Unit {
     val arr: Array<Int> = Array<Int>(3) { -1 }
@@ -57,9 +57,9 @@ fun handleFactorial(): Unit {
 
     for (i: Int in 0..2) {
         println("Please supply ${if (i == 0) "a" else "another"} number:")
-        val x: String = readln()
+        val x = readLine()
 
-        if (x.isEmpty() || x == null) {
+        if (x == null || x.isEmpty()) {
             println("Error: Number was empty, this operation will terminate.")
             escape = -1
             break
@@ -75,7 +75,7 @@ fun handleFactorial(): Unit {
     return when (sum) {
         -1 -> println("Error: The numbers supplied to the operation were not positive integers, this operation will terminate.")
         -2 -> println("Error: The numbers supplied were too large to be calculated, this operation will terminate.")
-        else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum")
+        else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum.\nThank you for using the factorial operation. You will now return to the main menu.")
     }
 }
 

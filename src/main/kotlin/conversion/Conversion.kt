@@ -148,14 +148,14 @@ fun runConversion(from: String, to: String, tempNumber: Double): Double =
 
 /**
  * Handles interaction with the user for the conversion operation
- * @returns Unit & multiple side effects of println and readln
+ * @returns Unit & multiple side effects of println and readLine
  */
 fun handleConversion(): Unit {
-    println("The conversion operation will convert a temperature from Celsius, Kelvin, or Fahrenheit to another.")
+    println("The temperature conversion operation will convert a temperature from Celsius, Kelvin, or Fahrenheit to another.")
 
     println("What do you want to convert from: c for Celsius, k for Kelvin, or f for Fahrenheit?")
 
-    val from: String = readln()
+    val from = readLine()
 
     if (from == null || from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
         return println("Error: Input was invalid, this operation will terminate.")
@@ -163,7 +163,7 @@ fun handleConversion(): Unit {
 
     println("What do you want to convert to: c for Celsius, k for Kelvin, or f for Fahrenheit?")
 
-    val to: String = readln()
+    val to = readLine()
 
     if (to == null || to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
         return println("Error: Input was invalid, this operation will terminate.")
@@ -173,7 +173,7 @@ fun handleConversion(): Unit {
 
     println("What is the temperature?")
 
-    val temp: String = readln()
+    val temp = readLine()
 
     if (temp == null || temp.isEmpty()) {
         return println("Error: Input was empty, this operation will terminate.")
@@ -191,7 +191,9 @@ fun handleConversion(): Unit {
         return println("Error: Conversion could not be performed, this operation will terminate.")
     }
 
-    return println("$tempNumber ${returnTempUnit(from)} is $conversion ${returnTempUnit(to)}")
+    println("$tempNumber ${returnTempUnit(from)} is $conversion ${returnTempUnit(to)}")
+
+    return println("Thank you for using the temperature conversion operation. You will now return to the main menu.")
 }
 
 fun main(): Unit = handleConversion()
