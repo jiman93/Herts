@@ -2,22 +2,29 @@ import conversion.handleConversion
 import factorial.handleFactorial
 
 fun main() {
-    println("Welcome to the Kotlin CLI Utility!")
-    println("Available commands: sum, conversion, factorial, exit")
+    var repeatCondition: Boolean = true
 
-    while (true) {
-        print("Enter command: ")
-        val command = readLine()?.trim()?.lowercase()
+    println("Welcome to \"Interactive Kotlin Command-line Utility\" by Group B")
+    println("This program can be used to complete three operations: sum, temperature conversion & factorials")
+
+    while (repeatCondition) {
+        println("To choose the sum operation, input \"sum\".")
+        println("To choose the temperature conversion operation, input \"conversion\".")
+        println("To choose the factorial operation, input \"factorial\".")
+        println("To exit the program, input \"exit\".")
+
+        val command = readLine()
 
         when (command) {
             "sum" -> handleSum()
             "conversion" -> handleConversion()
             "factorial" -> handleFactorial()
             "exit" -> {
-                println("Goodbye!")
-                break
+                println("Thank you for using \"Interactive Kotlin Command-line Utility\" by Group B")
+                println("Goodbye for now!")
+                repeatCondition = false
             }
-            else -> println("Invalid command. Please try again.")
+            else -> println("Error: Your input was invalid! Please try again.")
         }
     }
 }
