@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d5605308-2af7-44ba-8b79-1ac70db32101" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" afterDir="false" />
     </list>
@@ -202,7 +201,7 @@
       <workItem from="1751042440658" duration="505000" />
       <workItem from="1751103102270" duration="6700000" />
       <workItem from="1751384019169" duration="2941000" />
-      <workItem from="1751459908722" duration="1304000" />
+      <workItem from="1751459908722" duration="3809000" />
     </task>
     <servers />
   </component>

@@ -158,7 +158,7 @@ fun handleConversion(): Unit {
     val from = readLine()
 
     if (from == null || from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
-        return println("Error: Input was invalid, this operation will terminate.")
+        return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
     println("What do you want to convert to: c for Celsius, k for Kelvin, or f for Fahrenheit?")
@@ -166,9 +166,9 @@ fun handleConversion(): Unit {
     val to = readLine()
 
     if (to == null || to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
-        return println("Error: Input was invalid, this operation will terminate.")
+        return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     } else if (from == to) {
-        return println("Error: The units supplied were the same, this operation will terminate.")
+        return println("Error: The units supplied were the same, this operation will terminate and return you to the main menu.")
     }
 
     println("What is the temperature?")
@@ -176,19 +176,19 @@ fun handleConversion(): Unit {
     val temp = readLine()
 
     if (temp == null || temp.isEmpty()) {
-        return println("Error: Input was empty, this operation will terminate.")
+        return println("Error: Input was empty, this operation will terminate and return you to the main menu.")
     }
 
     val tempNumber: Double = try { temp.toDouble() } catch (e: NumberFormatException) { -500.0 }
 
     if (tempNumber == -500.0) {
-        return println("Error: Input was invalid, this operation will terminate.")
+        return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
     var conversion: Double = runConversion(from, to, tempNumber)
 
     if (conversion == -500.0) {
-        return println("Error: Conversion could not be performed, this operation will terminate.")
+        return println("Error: Conversion could not be performed, this operation will terminate and return you to the main menu.")
     }
 
     println("$tempNumber ${returnTempUnit(from)} is $conversion ${returnTempUnit(to)}")
