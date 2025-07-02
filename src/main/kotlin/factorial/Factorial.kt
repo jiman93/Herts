@@ -60,7 +60,7 @@ fun handleFactorial(): Unit {
         val x = readLine()
 
         if (x == null || x.isEmpty()) {
-            println("Error: Number was empty, this operation will terminate.")
+            println("Error: Number was empty, this operation will terminate and return you to the main menu.")
             escape = -1
             break
         }
@@ -73,8 +73,8 @@ fun handleFactorial(): Unit {
     sum = sumFactorial(arr[0], arr[1], arr[2])
 
     return when (sum) {
-        -1 -> println("Error: The numbers supplied to the operation were not positive integers, this operation will terminate.")
-        -2 -> println("Error: The numbers supplied were too large to be calculated, this operation will terminate.")
+        -1 -> println("Error: The numbers supplied to the operation were not positive integers, this operation will terminate and return you to the main menu.")
+        -2 -> println("Error: The numbers supplied were too large to be calculated, this operation will terminate and return you to the main menu.")
         else -> println("The sum of the factorials of ${arr[0]}, ${arr[1]} & ${arr[2]} is: $sum.\nThank you for using the factorial operation. You will now return to the main menu.")
     }
 }
