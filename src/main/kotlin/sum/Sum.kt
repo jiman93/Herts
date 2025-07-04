@@ -35,7 +35,7 @@ fun handleSum(): Unit {
     println("The sum operation will calculate the sum of numbers cubed from 1 to n, where n is a natural number.")
     println("Please supply the value of n:")
 
-    val n = readLine()
+    val n: String? = readLine()
 
     if (n == null || n.isEmpty()) {
         return println("Error: Input was empty, this operation will terminate and return you to the main menu.")

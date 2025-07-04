@@ -57,7 +57,7 @@ fun handleFactorial(): Unit {
 
     for (i: Int in 0..2) {
         println("Please supply ${if (i == 0) "a" else "another"} number:")
-        val x = readLine()
+        val x: String? = readLine()
 
         if (x == null || x.isEmpty()) {
             println("Error: Number was empty, this operation will terminate and return you to the main menu.")
