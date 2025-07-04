@@ -1,5 +1,6 @@
 import conversion.handleConversion
 import factorial.handleFactorial
+import sum.handleSum
 
 fun main() {
     var repeatCondition: Boolean = true
@@ -27,18 +28,4 @@ fun main() {
             else -> println("Error: Your input was invalid! Please try again.")
         }
     }
-}
-
-// sum: 1^3 + 2^3 + ... + n^3
-fun handleSum() {
-    print("Enter a natural number: ")
-    val input = readLine()
-    val n = input?.toIntOrNull()
-    if (n == null || n <= 0) {
-        println("Invalid input. Please enter a natural number.")
-        return
-    }
-
-    val result = (1..n).sumOf { it * it * it }
-    println("Sum of cubes up to $n is: $result")
 }
