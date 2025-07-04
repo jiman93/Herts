@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5605308-2af7-44ba-8b79-1ac70db32101" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/conversion/Conversion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/factorial/Factorial.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,47 +56,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.Build Herts.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testCelsiusToFahrenheit.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testCelsiusToKelvin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testFahrenheitToCelsius.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testFahrenheitToKelvin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testKelvinToCelsius.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testKelvinToFahrenheit.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testReturnTempUnit.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testRunConversion.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConversionTest.testTwoDecimalPlaces.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FactorialTest.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ConversionKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FactorialKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Build Herts.executor": "Run",
+    "Gradle.ConversionTest (1).executor": "Run",
+    "Gradle.ConversionTest.executor": "Run",
+    "Gradle.ConversionTest.testCelsiusToFahrenheit.executor": "Run",
+    "Gradle.ConversionTest.testCelsiusToKelvin.executor": "Run",
+    "Gradle.ConversionTest.testFahrenheitToCelsius.executor": "Run",
+    "Gradle.ConversionTest.testFahrenheitToKelvin.executor": "Run",
+    "Gradle.ConversionTest.testKelvinToCelsius.executor": "Run",
+    "Gradle.ConversionTest.testKelvinToFahrenheit.executor": "Run",
+    "Gradle.ConversionTest.testReturnTempUnit.executor": "Run",
+    "Gradle.ConversionTest.testRunConversion.executor": "Run",
+    "Gradle.ConversionTest.testTwoDecimalPlaces.executor": "Run",
+    "Gradle.FactorialTest.executor": "Run",
+    "Gradle.SumTest.executor": "Run",
+    "Kotlin.ConversionKt.executor": "Run",
+    "Kotlin.FactorialKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.SumKt.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\cky_l\\.gradle&quot;
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\cky_l\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -111,6 +112,7 @@
       <recent name="conversion" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sum" />
       <recent name="conversion" />
       <recent name="" />
     </key>
@@ -164,8 +166,39 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="SumTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;sum.SumTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="Herts.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SumKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sum.SumKt" />
       <module name="Herts.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,6 +207,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.SumKt" />
+        <item itemvalue="Gradle.SumTest" />
         <item itemvalue="Gradle.FactorialTest" />
         <item itemvalue="Gradle.ConversionTest" />
       </list>
@@ -202,6 +237,7 @@
       <workItem from="1751103102270" duration="6700000" />
       <workItem from="1751384019169" duration="2941000" />
       <workItem from="1751459908722" duration="3809000" />
+      <workItem from="1751611906987" duration="3450000" />
     </task>
     <servers />
   </component>
