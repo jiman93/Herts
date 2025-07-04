@@ -14,7 +14,7 @@ fun main() {
         println("To choose the factorial operation, input \"factorial\".")
         println("To exit the program, input \"exit\".")
 
-        val command = readLine()
+        val command: String? = readLine()
 
         when (command) {
             "sum" -> handleSum()

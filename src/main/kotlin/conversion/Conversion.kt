@@ -155,7 +155,7 @@ fun handleConversion(): Unit {
 
     println("What do you want to convert from: c for Celsius, k for Kelvin, or f for Fahrenheit?")
 
-    val from = readLine()
+    val from: String? = readLine()
 
     if (from == null || from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
@@ -163,7 +163,7 @@ fun handleConversion(): Unit {
 
     println("What do you want to convert to: c for Celsius, k for Kelvin, or f for Fahrenheit?")
 
-    val to = readLine()
+    val to: String? = readLine()
 
     if (to == null || to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
@@ -173,7 +173,7 @@ fun handleConversion(): Unit {
 
     println("What is the temperature?")
 
-    val temp = readLine()
+    val temp: String? = readLine()
 
     if (temp == null || temp.isEmpty()) {
         return println("Error: Input was empty, this operation will terminate and return you to the main menu.")
