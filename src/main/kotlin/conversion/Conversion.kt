@@ -1,6 +1,19 @@
 package conversion
 
 /**
+ * Sentinel value representing an invalid temperature result.
+ *
+ * This constant is used across all temperature conversions
+ * to signal errors such as:
+ * - Input below absolute zero
+ * - Unrecognized conversion units
+ *
+ * Chosen as it is lower than any valid result in Celsius, Kelvin, or Fahrenheit.
+ */
+const val TEMP_ERROR = -500.0
+
+
+/**
  * Converts a temperature from celsius to kelvin
  * E.g.     valid   celsiusToKelvin(0.0) = 273.15
  *                  celsiusToKelvin(100.0) = 373.15
@@ -11,7 +24,7 @@ package conversion
  *          zero for all units, so it can never be returned)
  */
 fun celsiusToKelvin(i: Double): Double {
-    if (i < -273.15) return -500.0
+    if (i < -273.15) return TEMP_ERROR
 
     return twoDecimalPlaces(i + 273.15)
 }
@@ -27,7 +40,7 @@ fun celsiusToKelvin(i: Double): Double {
  *          for all units, so it can never be returned)
  */
 fun celsiusToFahrenheit(i: Double): Double {
-    if (i < -273.15) return -500.0
+    if (i < -273.15) return TEMP_ERROR
 
     return twoDecimalPlaces((i * 9.0 / 5.0) + 32.0)
 }
@@ -43,7 +56,7 @@ fun celsiusToFahrenheit(i: Double): Double {
  *          zero for all units, so it can never be returned)
  */
 fun kelvinToCelsius(i: Double): Double {
-    if (i < 0.0) return -500.0
+    if (i < 0.0) return TEMP_ERROR
 
     return twoDecimalPlaces(i - 273.15)
 }
@@ -59,7 +72,7 @@ fun kelvinToCelsius(i: Double): Double {
  *          for all units, so it can never be returned)
  */
 fun kelvinToFahrenheit(i: Double): Double {
-    if (i < 0.0) return -500.0
+    if (i < 0.0) return TEMP_ERROR
 
     return twoDecimalPlaces((i - 273.15) * 9.0 / 5.0 + 32.0)
 }
@@ -75,7 +88,7 @@ fun kelvinToFahrenheit(i: Double): Double {
  *          for all units, so it can never be returned)
  */
 fun fahrenheitToCelsius(i: Double): Double {
-    if (i < -459.67) return -500.0
+    if (i < -459.67) return TEMP_ERROR
 
     return twoDecimalPlaces((i - 32.0) * 5.0 / 9.0)
 }
@@ -91,7 +104,7 @@ fun fahrenheitToCelsius(i: Double): Double {
  *          for all units, so it can never be returned)
  */
 fun fahrenheitToKelvin(i: Double): Double {
-    if (i < -459.67) return -500.0
+    if (i < -459.67) return TEMP_ERROR
 
     return twoDecimalPlaces((i - 32.0) * 5.0 / 9.0 + 273.15)
 }
@@ -144,7 +157,7 @@ fun runConversion(from: String, to: String, tempNumber: Double): Double =
     else if (from == "k" && to == "f") kelvinToFahrenheit(tempNumber)
     else if (from == "f" && to == "c") fahrenheitToCelsius(tempNumber)
     else if (from == "f" && to == "k") fahrenheitToKelvin(tempNumber)
-    else -500.0
+    else TEMP_ERROR
 
 /**
  * Handles interaction with the user for the conversion operation
@@ -179,15 +192,15 @@ fun handleConversion(): Unit {
         return println("Error: Input was empty, this operation will terminate and return you to the main menu.")
     }
 
-    val tempNumber: Double = try { temp.toDouble() } catch (e: NumberFormatException) { -500.0 }
+    val tempNumber: Double = try { temp.toDouble() } catch (e: NumberFormatException) { TEMP_ERROR}
 
-    if (tempNumber == -500.0) {
+    if (tempNumber == TEMP_ERROR) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
     var conversion: Double = runConversion(from, to, tempNumber)
 
-    if (conversion == -500.0) {
+    if (conversion == TEMP_ERROR) {
         return println("Error: Conversion could not be performed, this operation will terminate and return you to the main menu.")
     }
 
