@@ -9,9 +9,14 @@ package sum
  *                  sumCubes(304) = -2
  *                  sumCubes(1290) = -2
  * @param   n natural number
- * @returns sum of numbers cubed from 1 to n, or -1 if n is not a natural number,
+ * @returns sum of numbers cubed from 1 to n,
+ *          or -1 if n is not a natural number,
  *          or -2 if the calculation overflows int.max_value
+ *
+ * Note: Returns -2 for large values of n (e.g. > 303), since the sum of cubes
+ *       grows rapidly and will exceed Int.MAX_VALUE (2,147,483,647).
  */
+
 fun sumCubes(n: Int): Int {
     if (n < 1) return -1
 
