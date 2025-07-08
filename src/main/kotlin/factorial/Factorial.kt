@@ -8,6 +8,8 @@ package factorial
  *                  factorial(13) = -1
  * @param   x greater than or equal to 0
  * @returns factorial of x, or -1 if x is negative or the result overflows
+ *
+ * Note: Returns -1 for x > 12 because 13! exceeds Int.MAX_VALUE (2,147,483,647)
  */
 fun factorial(x: Int): Int {
     if (x < 0) return -1
