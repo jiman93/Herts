@@ -10,7 +10,7 @@ package conversion
  *
  * Chosen as it is lower than any valid result in Celsius, Kelvin, or Fahrenheit.
  */
-const val TEMP_ERROR = -500.0
+val TEMP_ERROR: Double = -500.0
 
 
 /**
@@ -192,7 +192,7 @@ fun handleConversion(): Unit {
         return println("Error: Input was empty, this operation will terminate and return you to the main menu.")
     }
 
-    val tempNumber: Double = try { temp.toDouble() } catch (e: NumberFormatException) { TEMP_ERROR}
+    val tempNumber: Double = try { temp.toDouble() } catch (e: NumberFormatException) { TEMP_ERROR }
 
     if (tempNumber == TEMP_ERROR) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
