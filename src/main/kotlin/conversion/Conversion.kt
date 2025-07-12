@@ -115,11 +115,12 @@ fun fahrenheitToKelvin(i: Double): Double {
  *                  returnTempUnit("k") = "Kelvin"
  *          invalid returnTempUnit("") = "Error"
  *                  returnTempUnit("lorem") = "Error"
+ *                  returnTempUnit(null) = "Error"
  * @param   str value of the abbreviated temperature units ("c", "k" or "f")
  * @returns the full temperature name, or "Error" if str doesn't match the list of
  *          abbreviated units
  */
-fun returnTempUnit(str: String): String = when (str) {
+fun returnTempUnit(str: String?): String = when (str) {
     "c" -> "Celsius"
     "k" -> "Kelvin"
     "f" -> "Fahrenheit"
@@ -159,15 +160,17 @@ fun isValidUnit(input: String?): Boolean {
  *          invalid runConversion("", "", 0.0) = -500.0
  *                  runConversion("b", "k", 0.0) = -500.0
  *                  runConversion("c", "f", -273.75) = -500.0
+ *                  runConversion(null, "f", -273.75) = -500.0
  * @param   from value of the abbreviated temperature units ("c", "k" or "f")
  * @param   to value of the abbreviated temperature units ("c", "k" or "f")
  * @param   tempNumber initial value for conversion
- * @returns the value of the conversion, or -500.00 if from or to are empty, or -500.00
+ * @returns the value of the conversion, or -500.00 if from or to are empty/null, or -500.00
  *          if from or to do not match "c", "k" or "f", or -500.00 if tempNumber is
  *          below absolute zero
  */
-fun runConversion(from: String, to: String, tempNumber: Double): Double =
-    if (from == "c" && to == "k") celsiusToKelvin(tempNumber)
+fun runConversion(from: String?, to: String?, tempNumber: Double): Double =
+    if (from == null || to == null) TEMP_ERROR
+    else if (from == "c" && to == "k") celsiusToKelvin(tempNumber)
     else if (from == "c" && to == "f") celsiusToFahrenheit(tempNumber)
     else if (from == "k" && to == "c") kelvinToCelsius(tempNumber)
     else if (from == "k" && to == "f") kelvinToFahrenheit(tempNumber)
@@ -200,10 +203,6 @@ fun handleConversion(): Unit {
         return println("Error: The units supplied were the same, this operation will terminate and return you to the main menu.")
     }
 
-    // Assign to non-nullable variables after validation
-    val fromUnit = from!!
-    val toUnit = to!!
-
     println("What is the temperature?")
 
     val temp: String? = readLine()
@@ -218,13 +217,13 @@ fun handleConversion(): Unit {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
-    var conversion: Double = runConversion(fromUnit, toUnit, tempNumber)
+    var conversion: Double = runConversion(from, to, tempNumber)
 
     if (conversion == TEMP_ERROR) {
         return println("Error: Conversion could not be performed, this operation will terminate and return you to the main menu.")
     }
 
-    println("$tempNumber ${returnTempUnit(fromUnit)} is $conversion ${returnTempUnit(toUnit)}")
+    println("$tempNumber ${returnTempUnit(from)} is $conversion ${returnTempUnit(to)}")
 
     return println("Thank you for using the temperature conversion operation. You will now return to the main menu.")
 }
