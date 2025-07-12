@@ -52,6 +52,7 @@ class ConversionTest {
         assertEquals("Kelvin", returnTempUnit("k"))
         assertEquals("Error", returnTempUnit(""))
         assertEquals("Error", returnTempUnit("Lorem"))
+        assertEquals("Error", returnTempUnit(null))
     }
 
     @Test
@@ -61,11 +62,22 @@ class ConversionTest {
     }
 
     @Test
+    fun testisValidUnit() {
+        assertEquals(true, isValidUnit("c"))
+        assertEquals(true, isValidUnit("k"))
+        assertEquals(true, isValidUnit("f"))
+        assertEquals(false, isValidUnit("x"))
+        assertEquals(false, isValidUnit(""))
+        assertEquals(false, isValidUnit(null))
+    }
+
+    @Test
     fun testRunConversion() {
         assertEquals(32.0, runConversion("c", "f", 0.0))
         assertEquals(-279.67, runConversion("k", "f", 100.0))
         assertEquals(-500.0, runConversion("", "", 0.0))
         assertEquals(-500.0, runConversion("b", "k", 0.0))
         assertEquals(-500.0, runConversion("c", "f", -273.75))
+        assertEquals(-500.0, runConversion(null, "f", -273.75))
     }
 }

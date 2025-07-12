@@ -115,11 +115,12 @@ fun fahrenheitToKelvin(i: Double): Double {
  *                  returnTempUnit("k") = "Kelvin"
  *          invalid returnTempUnit("") = "Error"
  *                  returnTempUnit("lorem") = "Error"
+ *                  returnTempUnit(null) = "Error"
  * @param   str value of the abbreviated temperature units ("c", "k" or "f")
  * @returns the full temperature name, or "Error" if str doesn't match the list of
  *          abbreviated units
  */
-fun returnTempUnit(str: String): String = when (str) {
+fun returnTempUnit(str: String?): String = when (str) {
     "c" -> "Celsius"
     "k" -> "Kelvin"
     "f" -> "Fahrenheit"
@@ -136,6 +137,22 @@ fun returnTempUnit(str: String): String = when (str) {
 fun twoDecimalPlaces(i: Double): Double = kotlin.math.round(i * 100.0) / 100.0
 
 /**
+ * Validates whether the given input is one of the accepted temperature units.
+ * E.g.     valid   isValidUnit("c") = true
+ *                  isValidUnit("k") = true
+ *                  isValidUnit("f") = true
+ *          invalid isValidUnit("x") = false
+ *                  isValidUnit("") = false
+ *                  isValidUnit(null) = false
+ * @param   input nullable string representing temperature unit abbreviation
+ * @returns true if input is "c", "k", or "f"; false otherwise
+ */
+fun isValidUnit(input: String?): Boolean {
+    return input != null && input.isNotEmpty() &&
+            (input == "c" || input == "k" || input == "f")
+}
+
+/**
  * Runs the specific temperature conversions based on the two abbreviated units and
  * the initial value
  * E.g.     valid   runConversion("c", "f", 0.0) = 32.0
@@ -143,15 +160,17 @@ fun twoDecimalPlaces(i: Double): Double = kotlin.math.round(i * 100.0) / 100.0
  *          invalid runConversion("", "", 0.0) = -500.0
  *                  runConversion("b", "k", 0.0) = -500.0
  *                  runConversion("c", "f", -273.75) = -500.0
+ *                  runConversion(null, "f", -273.75) = -500.0
  * @param   from value of the abbreviated temperature units ("c", "k" or "f")
  * @param   to value of the abbreviated temperature units ("c", "k" or "f")
  * @param   tempNumber initial value for conversion
- * @returns the value of the conversion, or -500.00 if from or to are empty, or -500.00
+ * @returns the value of the conversion, or -500.00 if from or to are empty/null, or -500.00
  *          if from or to do not match "c", "k" or "f", or -500.00 if tempNumber is
  *          below absolute zero
  */
-fun runConversion(from: String, to: String, tempNumber: Double): Double =
-    if (from == "c" && to == "k") celsiusToKelvin(tempNumber)
+fun runConversion(from: String?, to: String?, tempNumber: Double): Double =
+    if (from == null || to == null) TEMP_ERROR
+    else if (from == "c" && to == "k") celsiusToKelvin(tempNumber)
     else if (from == "c" && to == "f") celsiusToFahrenheit(tempNumber)
     else if (from == "k" && to == "c") kelvinToCelsius(tempNumber)
     else if (from == "k" && to == "f") kelvinToFahrenheit(tempNumber)
@@ -170,7 +189,7 @@ fun handleConversion(): Unit {
 
     val from: String? = readLine()
 
-    if (from == null || from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
+    if (!isValidUnit(from)) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
@@ -178,7 +197,7 @@ fun handleConversion(): Unit {
 
     val to: String? = readLine()
 
-    if (to == null || to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
+    if (!isValidUnit(to)) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     } else if (from == to) {
         return println("Error: The units supplied were the same, this operation will terminate and return you to the main menu.")
