@@ -136,6 +136,22 @@ fun returnTempUnit(str: String): String = when (str) {
 fun twoDecimalPlaces(i: Double): Double = kotlin.math.round(i * 100.0) / 100.0
 
 /**
+ * Validates whether the given input is one of the accepted temperature units.
+ * E.g.     valid   isValidUnit("c") = true
+ *                  isValidUnit("k") = true
+ *                  isValidUnit("f") = true
+ *          invalid isValidUnit("x") = false
+ *                  isValidUnit("") = false
+ *                  isValidUnit(null) = false
+ * @param   input nullable string representing temperature unit abbreviation
+ * @returns true if input is "c", "k", or "f"; false otherwise
+ */
+fun isValidUnit(input: String?): Boolean {
+    return input != null && input.isNotEmpty() &&
+            (input == "c" || input == "k" || input == "f")
+}
+
+/**
  * Runs the specific temperature conversions based on the two abbreviated units and
  * the initial value
  * E.g.     valid   runConversion("c", "f", 0.0) = 32.0
@@ -170,7 +186,7 @@ fun handleConversion(): Unit {
 
     val from: String? = readLine()
 
-    if (from == null || from.isEmpty() || (from != "c" && from != "k" && from != "f")) {
+    if (!isValidUnit(from)) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
@@ -178,11 +194,15 @@ fun handleConversion(): Unit {
 
     val to: String? = readLine()
 
-    if (to == null || to.isEmpty() || (to != "c" && to != "k" && to != "f")) {
+    if (!isValidUnit(to)) {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     } else if (from == to) {
         return println("Error: The units supplied were the same, this operation will terminate and return you to the main menu.")
     }
+
+    // Assign to non-nullable variables after validation
+    val fromUnit = from!!
+    val toUnit = to!!
 
     println("What is the temperature?")
 
@@ -198,13 +218,13 @@ fun handleConversion(): Unit {
         return println("Error: Input was invalid, this operation will terminate and return you to the main menu.")
     }
 
-    var conversion: Double = runConversion(from, to, tempNumber)
+    var conversion: Double = runConversion(fromUnit, toUnit, tempNumber)
 
     if (conversion == TEMP_ERROR) {
         return println("Error: Conversion could not be performed, this operation will terminate and return you to the main menu.")
     }
 
-    println("$tempNumber ${returnTempUnit(from)} is $conversion ${returnTempUnit(to)}")
+    println("$tempNumber ${returnTempUnit(fromUnit)} is $conversion ${returnTempUnit(toUnit)}")
 
     return println("Thank you for using the temperature conversion operation. You will now return to the main menu.")
 }
